@@ -1,4 +1,11 @@
-img{
+/* Universal selector for base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
     display: block;
     border-width: 10px;
     border-style: solid;
@@ -12,6 +19,9 @@ img{
 #page_wrapper {
     width: 80%;
     margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px; /* Space for footer */
 }
 
 /* Navigation menu */
@@ -22,22 +32,25 @@ nav {
     width: 220px;
     background-color: #333;
     padding-top: 20px;
-    font-size: calc(1vm + 1vw);
+    font-size: calc(1vh + 1vw); /* Fixed vm to vh */
     box-sizing: border-box;
+
 }
 
 
 header {
     display: flex;
     flex-direction: column; /* Stack h1 and p vertically */
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Vertically center the content */
+    justify-content: start; /* Center the content horizontally */
+    align-items: start;
     margin-left: 240px; /* Space for the navigation menu */
     padding: 20px;
-    text-align: center;
-    font-size: calc(2vm + 1vw);
+    text-align: start;
+    font-size: calc(2vh + 1vw); /* Fixed vm to vh */
     width: calc(100% - 240px); /* Take up the remaining space after the nav */
+
 }
+
 /* Navigation links */
 nav ul {
     display: flex;
@@ -68,7 +81,7 @@ main {
     margin-left: 240px;
     padding: 20px;
     text-align: center;
-    font-size: calc(1.5vw + 0.5vw);
+    font-size: calc(1.5vh + 0.5vw); /* Adjusted to vh */
 }
 
 /* Footer */
@@ -77,67 +90,148 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: calc(100% - 240px);
     margin-left: 240px;
 }
+
 input[type="text"]:focus {
     outline: none;
     border: 2px solid #f39c12; /* Golden glow on focus */
     box-shadow: 0 0 10px rgba(243, 156, 18, 0.7);
 }
 
+/* Calculator styling */
+.calculator {
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.calculator input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calculator button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calculator button:hover {
+    background-color: #1a252f;
+}
+
 #output {
     font-size: 2rem;
-    font-family: 'Papyrus', fantasy;
+    font-family: 'Arial', sans-serif; /* Changed from Papyrus to ensure wider compatibility */
     text-align: center;
-    color:white;
+    color: black;
     margin-top: 20px;
-    padding: 10px;
+    padding: 15px;
     border: 2px solid #d4af37;
-    background-color: #4a6681; /* Slightly lighter background for output */
+    background-color: #f8f9fa; /* Lighter background for better readability */
     border-radius: 10px;
+    min-height: 60px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: break-word;
 }
+
 /* Responsive Design for smaller screens (750px or less) */
 @media screen and (max-width: 750px) {
     #page_wrapper {
         width: 100%; /* Ensure it occupies full width */
-        margin: 0; /* Remove auto margins */
+        margin: auto; /* Center but maintain some margin */
+        padding: 10px; /* Add some padding inside */
     }
-    header{
+
+    header {
         align-items: center;
+        text-align: center;
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+        margin-top: 150px; /* Space for the nav that's now at the top */
+
     }
+
     nav {
-        position: relative; /* Remove fixed positioning */
+        position: fixed; /* Keep fixed to stay at top */
         width: 100%; /* Make it span full width */
         height: auto;
-        padding: 10px 0;
+        max-height: 150px;
+        padding: 10px;
         box-sizing: border-box;
-        font-size:2.25vw;
+        font-size: 2.25vw;
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+
     }
 
     nav ul {
         flex-direction: row;
         justify-content: space-around;
+        flex-wrap: wrap; /* Allow wrapping */
     }
 
     nav ul li {
         width: auto; /* Let links size naturally */
+        margin: 5px;
     }
 
     nav ul li a {
         width: auto;
-        padding: 1.5vh 2vw;
+        padding: 8px 15px;
+        font-size: 14px;
     }
 
     main {
         margin-left: 0; /* Allow it to take full width */
-        padding: 20px;
+        padding: 15px;
+        margin-top: 20px;
     }
 
     footer {
         width: 100%;
         margin-left: 0; /* Align footer with full width */
+        position: relative;
+        margin-top: 20px;
+    }
+
+    img {
+        max-width: 60%; /* Larger images on mobile */
+    }
+
+    /* Adjust calculator for small screens */
+    .calculator {
+        padding: 15px;
+    }
+
+
+
+    .calculator button {
+        padding: 10px;
+        font-size: 1rem;
     }
 }
