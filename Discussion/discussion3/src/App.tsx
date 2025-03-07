@@ -3,6 +3,7 @@ import './App.css'
 import AboutPage from "./components/AboutPage";
 import {createBrowserRouter, Route, RouterProvider, Routes} from "react-router";
 import Header from "./components/Header";
+import ArtworkContent from "./components/ArtworkContent";
 
 function Root(){
   return (
@@ -11,6 +12,7 @@ function Root(){
       <Routes>
         <Route path="/" element={<ArtworksListContent />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/artwork/:id" element={<ArtworkContent />}/>
       </Routes> 
     </div>
   )
