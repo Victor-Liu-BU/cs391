@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-// Page wrapper component
+// Page wrapper components
 export const PageWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@ export const MainContent = styled.main`
     }
 `;
 
-// Footer styled component
+// Footer styled components
 export const StyledFooter = styled.footer`
     background-color: #333;
     color: white;

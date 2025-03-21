@@ -1,0 +1,10 @@
+
+
+export default function AboutPage(){
+    return (
+        <div className={"flex flex-col justify-center items-center bg-red-300 p-2"}>
+            <h1> I am a CS391 Student</h1>
+            <p> I am struggling in this class</p>
+        </div>
+    );
+}
