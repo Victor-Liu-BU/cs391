@@ -28,10 +28,10 @@ export default function AboutPage(){
                             secure, all API requests are made server-side using Next.js server components and API routes.
                         </p>
                         <div className="code-block">
-                            <p className="paragraph">// Server-side API function with "use server" directive</p>
-                            <p className="paragraph">// This ensures the API key remains on the server</p>
+                            <p className="paragraph">"Server-side API function with "use server" directive"</p>
+                            <p className="paragraph">"This ensures the API key remains on the server"</p>
                             <p className="paragraph">const API_KEY = process.env.ICON_API_KEY;</p>
-                            <p className="paragraph">// API request with proper authorization header</p>
+                            <p className="paragraph">"API request with proper authorization header"</p>
                             <p className="paragraph">const response = await fetch(url, &#123;</p>
                             <p className="paragraph pl-4">headers: &#123; "Authorization": Bearer &#36;&#123;API_KEY&#125; &#125;</p>
                             <p className="paragraph">&#125;);</p>
@@ -43,9 +43,9 @@ export default function AboutPage(){
                             Next.js API routes. This ensures the API key is never exposed to the client.
                         </p>
                         <div className="code-block">
-                            <p className="paragraph">// Client-side search component</p>
-                            <p className="paragraph">const handleSearch = async (e) => &#123;</p>
-                            <p className="paragraph pl-4">// Call our internal API route instead of external API directly</p>
+                            <p className="paragraph">"Client-side search component"</p>
+                            <p className="paragraph">const handleSearch = async (e) =&gt; &#123;</p>
+                            <p className="paragraph pl-4">"Call our internal API route instead of external API directly"</p>
                             <p className="paragraph pl-4">const response = await fetch(`/api/icons/search?query=&#36;&#123;query&#125;`);</p>
                             <p className="paragraph pl-4">const data = await response.json();</p>
                             <p className="paragraph pl-4">onSearch(data.icons);</p>
