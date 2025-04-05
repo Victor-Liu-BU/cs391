@@ -1,5 +1,6 @@
+import Link from 'next/link';
 export default function AboutPage(){
-    // @ts-ignore
+
     return (
         <main className="min-h-screen p-6 bg-gray-50">
             <div className="max-w-4xl mx-auto">
@@ -72,12 +73,12 @@ export default function AboutPage(){
                 </div>
 
                 <div className="text-center mt-8">
-                    <a
+                    <Link
                         href="/"
                         className="inline-block bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-6 rounded-full transition-colors"
                     >
                         Back to Home
-                    </a>
+                    </Link>
                 </div>
             </div>
         </main>
