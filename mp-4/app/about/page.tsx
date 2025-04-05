@@ -60,8 +60,8 @@ export default function AboutPage(){
                         </p>
                     </div>
 
-                    <div className="section-card">
-                        <h2 className="section-title">Technologies Used</h2>
+                    <div className="section-card text-black">
+                        <h2 className="section-title text-black">Technologies Used</h2>
                         <ul className="list-disc pl-6 space-y-2 text-gray-700">
                             <li>Next.js with App Router</li>
                             <li>TypeScript for type safety</li>
