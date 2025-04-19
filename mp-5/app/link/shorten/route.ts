@@ -43,7 +43,7 @@ export async function POST(request: Request) {
                 { status: 400, headers: { "Content-Type": "application/json" } }
             );
         }
-    } catch (err) {
+    } catch {
         return new Response(
             JSON.stringify({ error: "URL could not be reached." }),
             { status: 400, headers: { "Content-Type": "application/json" } }
