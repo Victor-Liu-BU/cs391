@@ -1,7 +1,8 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function ProfilePage() {
+function ProfilePageInner() {
     const searchParams = useSearchParams();
     const user = {
         login: searchParams.get('login') || '',
@@ -44,5 +45,14 @@ export default function ProfilePage() {
                 Powered by GitHub OAuth · <a href="https://github.com" className="underline">GitHub</a>
             </footer>
         </main>
+    );
+}
+
+// Export the page wrapped in Suspense
+export default function ProfilePage() {
+    return (
+        <Suspense fallback={<div>Loading profile...</div>}>
+            <ProfilePageInner />
+        </Suspense>
     );
 }
